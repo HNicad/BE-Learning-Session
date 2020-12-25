@@ -1,0 +1,8 @@
+
+server:
+  port: 8989
+service:
+  url: http://localhost:8888/employee
+spring:
+  profiles:
+    active: dev
