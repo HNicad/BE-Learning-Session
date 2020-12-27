@@ -1,0 +1,40 @@
+databaseChangeLog:
+  -  preConditions:
+  -  runningAs:
+       username:  nijad
+
+  -  changeSet:
+       id:  1
+       author:  Nijad
+       changes:
+         -  createTable:
+              tableName:  employee
+              columns:
+                -  column:
+                     name:  id
+                     type:  bigint
+                     autoIncrement:  true
+                     constraints:
+                       primaryKey:  true
+                       nullable:  false
+                -  column:
+                     name:  first_name
+                     type:  varchar(250)
+                -  column:
+                     name:  last_name
+                     type:  varchar(250)
+                -  column:
+                     name:  created_at
+                     type:  timestamp
+                - column:
+                    name: updated_at
+                    type: timestamp
+                - column:
+                    name: salary
+                    type: float8
+                - column:
+                    name: department
+                    type: varchar(250)
+                - column:
+                    name: gender
+                    type: int
