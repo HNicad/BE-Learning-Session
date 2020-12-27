@@ -1,0 +1,44 @@
+plugins {
+    id 'org.springframework.boot' version '2.4.1'
+    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+    id 'java'
+    id 'groovy'
+}
+
+group = 'com.nijad'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+   // implementation 'org.liquibase:liquibase-core'
+   // implementation 'org.mapstruct:mapstruct:1.4.1.Final'
+   // annotationProcessor "org.mapstruct:mapstruct-processor:1.4.1.Final"
+   // runtimeOnly 'org.postgresql:postgresql'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    // https://mvnrepository.com/artifact/com.h2database/h2
+    runtimeOnly 'com.h2database:h2'
+    //spock
+    testCompile "org.codehaus.groovy:groovy:2.5.13"
+    testImplementation platform("org.spockframework:spock-bom:2.0-M3-groovy-2.5")
+    testImplementation "org.spockframework:spock-core"
+    // lombok
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    // random beans
+    // https://mvnrepository.com/artifact/io.github.benas/random-beans
+    compile group: 'io.github.benas', name: 'random-beans', version: '3.9.0'
+
+
+
+}
+
+test {
+    useJUnitPlatform()
+}
